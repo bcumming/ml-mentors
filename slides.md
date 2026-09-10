@@ -15,29 +15,6 @@ Ben Cumming
 bcumming.github.io/ml-mentors
 
 ---
-layout: two-cols
-layoutClass: gap-2
----
-
-# Slurm
-
-What is Slurm
-
-::right::
-
-```
-Basic slurm examples
-```
-
----
-
-# Slurm: interactive sessions
-
----
-
-# Slurm: allocating GPUs
-
----
 
 # CSCS Documentation
 
@@ -52,6 +29,25 @@ Basic slurm examples
 Ideal world: all questions are answered by a link to the docs
 
 * Let us know if something is missing/unclear/wrong
+
+
+---
+
+# Slurm: allocating GPUs
+
+Slurm is the **workload manager** on Alps.
+
+Slurm is used to connect 
+
+
+
+```
+Basic slurm examples
+```
+
+---
+
+# Slurm: interactive sessions
 
 ---
 layout: two-cols
@@ -107,6 +103,8 @@ Start the tunnel and connect to VS Code
 1. Start a tunnel
 1. Authenticate on the web
 1. connect VS Code on laptop to the tunnel
+
+**note**: the connection can take a couple of minutes while the server is downloaded and configured inside the container
 
 The CSCS docs have a detailed [step by step instructions](https://docs.cscs.ch/access/vscode/#flexible-method-remote-server).
 
