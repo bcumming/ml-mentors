@@ -108,11 +108,11 @@ Start the tunnel and connect to VS Code
 1. Authenticate on the web
 1. connect VS Code on laptop to the tunnel
 
-The CSCS docs have a detailed (step by step instructions](https://docs.cscs.ch/access/vscode/#flexible-method-remote-server).
+The CSCS docs have a detailed [step by step instructions](https://docs.cscs.ch/access/vscode/#flexible-method-remote-server).
 
 ---
 
 
-## Good Luck
+## Questions
 
 
