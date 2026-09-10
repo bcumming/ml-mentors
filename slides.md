@@ -2,7 +2,7 @@
 theme: ./slidev-theme-cscs
 ---
 
-# Accessing Resources Clariden
+# Accessing Resources on Clariden
 
 <br>
 
@@ -85,11 +85,33 @@ layout: two-cols
 layoutClass: gap-2
 ---
 
-# VS Code
+# VS Code: use tunnels
 
+To use VS Code on a compute node with a container environment we have to first start the environment that we want to run in on a compute node, and connect to it from VS Code.
 
+**Step 1**: Set up VS Code on your laptop
+
+* Install VS Code on your laptop
+* Sign in to GitHub in VS Code
+* Install the Tunnels VS Code extension
+
+::right::
+
+**Step 2**:
+Install the `code` CLI tool on Clariden. See the [CSCS docs](https://docs.cscs.ch/access/vscode/#installing-the-server).
+
+**Step 3**:
+Start the tunnel and connect to VS Code
+
+1. Start a job with the container environment you plan to use
+1. Start a tunnel
+1. Authenticate on the web
+1. connect VS Code on laptop to the tunnel
+
+The CSCS docs have a detailed (step by step instructions](https://docs.cscs.ch/access/vscode/#flexible-method-remote-server).
 
 ---
+
 
 ## Good Luck
 
