@@ -30,24 +30,58 @@ Ideal world: all questions are answered by a link to the docs
 
 * Let us know if something is missing/unclear/wrong
 
-
 ---
 
 # Slurm: allocating GPUs
 
-Slurm is the **workload manager** on Alps.
+Slurm is the **workload manager** on Alps. Used to run work on compute nodes.
 
-Slurm is used to connect 
+Use [flags](https://docs.cscs.ch/running/slurm/#nvidia-gh200-gpu-nodes) to control how workload is distributed over [compute resources](https://docs.cscs.ch/alps/hardware/#nvidia-gh200-gpu-nodes) of nodes.
 
-
+**note**: `affinity.cuda` prints the GPUs and CPU cores assigned to each process in a distributed job.
 
 ```
-Basic slurm examples
+# two processes: each on a node with all GPUs and cores
+srun --nodes=2 ./affinity.cuda
+```
+
+```
+# two processes per node: problem because the resources overlap
+srun --ntasks-per-node=2 --nodes=2 ./affinity.cuda
+```
+
+```
+# GPUs are now uniquely assigned to tasks: cores are still shared
+srun --nodes=2 --ntasks-per-node=2 --gpus-per-task=2 ./affinity.cuda
+```
+
+```
+# All resources are evenly distributed
+srun --nodes=2 --ntasks-per-node=4 --gpus-per-task=2 --cpus-per-task=64 ./affinity.cuda
 ```
 
 ---
 
 # Slurm: interactive sessions
+
+Many "hacking" activities require interactive interaction with the system.
+
+<br>
+
+By default Slurm launches *non-interactive* workloads.
+
+<br>
+
+Use the `--pty` flag to launch `bash` to get an interactive shell
+* only launch a single process `--ntasks=1`
+
+<br>
+
+Launch a shell on a node. By default you will get all resources on the node.
+```
+srun -A<account> --ntasks=1 --pty bash
+```
+
 
 ---
 layout: two-cols
